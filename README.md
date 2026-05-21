@@ -1,103 +1,73 @@
-# 🏥 Clínica Integrada de Saúde Unifametro
+# React + TypeScript + Vite
 
-Projeto React para apresentação acadêmica — sistema de agendamento de consultas.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## ▶️ Como rodar o projeto
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### Passo 1 — Verificar se o Node.js está instalado
+## React Compiler
 
-Abra o terminal (CMD ou PowerShell no Windows) e digite:
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-```
-node -v
-```
+## Expanding the ESLint configuration
 
-Se aparecer um número como `v18.0.0`, está ok. Se não, baixe em: https://nodejs.org
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
----
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-### Passo 2 — Entrar na pasta do projeto
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-```
-cd unifametro-app
-```
-
----
-
-### Passo 3 — Instalar as dependências (só na primeira vez)
-
-```
-npm install
-```
-
-Aguarde alguns minutos enquanto baixa os pacotes.
-
----
-
-### Passo 4 — Rodar o projeto
-
-```
-npm run dev
-```
-
-Vai aparecer algo como:
-
-```
-  VITE v5.x.x  ready in 300ms
-
-  ➜  Local:   http://localhost:5173/
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-Abra o navegador e acesse: **http://localhost:5173**
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
----
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## 📱 Telas do sistema
-
-| Tela               | Descrição                                  |
-|--------------------|--------------------------------------------|
-| Landing Page       | Página inicial com especialidades          |
-| Login              | Identificação do aluno ou cliente          |
-| Minhas Consultas   | Lista de consultas agendadas               |
-| Lista de Médicos   | Médicos disponíveis por especialidade      |
-| Agendar Consulta   | Calendário + seleção de horário            |
-| Confirmação        | Modal confirmando o agendamento            |
-| Sucesso            | Modal de agendamento realizado             |
-
----
-
-## 🗂️ Estrutura de arquivos
-
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-unifametro-app/
-├── index.html          ← Arquivo HTML principal
-├── package.json        ← Configuração do projeto
-├── vite.config.js      ← Configuração do Vite
-└── src/
-    ├── main.jsx        ← Ponto de entrada do React
-    ├── App.jsx         ← Componente principal + navegação
-    ├── App.css         ← Estilos globais
-    ├── data.js         ← Dados fictícios (mock data)
-    └── components/
-        ├── Navbar.jsx          ← Barra de navegação
-        ├── HomePage.jsx        ← Tela inicial
-        ├── LoginPage.jsx       ← Tela de login
-        ├── MyAppointments.jsx  ← Minhas consultas
-        ├── DoctorsList.jsx     ← Lista de médicos
-        └── BookingPage.jsx     ← Tela de agendamento
-```
-
----
-
-## 💡 Para a apresentação
-
-- Use **qualquer CPF e senha** na tela de login
-- Clique em "Agendar atendimento" na página inicial
-- Selecione um médico → escolha data e horário → confirme
-- O agendamento aparece em "Minhas Consultas"
-
----
-
-Feito com ❤️ usando React + Vite

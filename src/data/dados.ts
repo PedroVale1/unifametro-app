@@ -1,0 +1,113 @@
+export const especialidades = [
+  { id: 1, nome: 'ENFERMAGEM', descricao: 'Estomaterapia' },
+  { id: 2, nome: 'PSICOLOGIA', descricao: 'Psicoterapia individual' },
+  { id: 3, nome: 'NUTRIÇÃO', descricao: 'Atendimento nutricional' },
+  { id: 4, nome: 'FISIOTERAPIA', descricao: 'Fisioterapia em Neurofuncional' },
+  { id: 5, nome: 'FARMÁCIA', descricao: 'Acompanhamento farmacoterapêutico' },
+]
+
+export const medicos = [
+  {
+    id: 1,
+    nome: 'Dr. Daniel Sousa',
+    especialidade_id: 3,
+    especialidade: 'Médico nutrólogo',
+    crm: 'CRM 123456',
+    telefone: '(85) 99999-0001',
+    apresentacao: '',
+  },
+  {
+    id: 2,
+    nome: 'Dra. Luiza Castro',
+    especialidade_id: 3,
+    especialidade: 'Nutricionista',
+    crm: 'CRM 654321',
+    telefone: '(85) 99999-0002',
+    apresentacao: '',
+  },
+  {
+    id: 3,
+    nome: 'Enf. Carla Mendes',
+    especialidade_id: 1,
+    especialidade: 'Enfermeira Estomaterapeuta',
+    crm: 'COREN 111111',
+    telefone: '(85) 99999-0003',
+    apresentacao: '',
+  },
+  {
+    id: 4,
+    nome: 'Enf. Roberto Lima',
+    especialidade_id: 1,
+    especialidade: 'Enfermeiro Clínico',
+    crm: 'COREN 222222',
+    telefone: '(85) 99999-0004',
+    apresentacao: '',
+  },
+  {
+    id: 5,
+    nome: 'Dra. Ana Beatriz Costa',
+    especialidade_id: 2,
+    especialidade: 'Psicóloga Clínica',
+    crm: 'CRP 11/33333',
+    telefone: '(85) 99999-0005',
+    apresentacao: '',
+  },
+  {
+    id: 6,
+    nome: 'Dr. Marcos Vinicius',
+    especialidade_id: 2,
+    especialidade: 'Psicólogo',
+    crm: 'CRP 11/44444',
+    telefone: '(85) 99999-0006',
+    apresentacao: '',
+  },
+  {
+    id: 7,
+    nome: 'Dr. Felipe Andrade',
+    especialidade_id: 4,
+    especialidade: 'Fisioterapeuta Neurofuncional',
+    crm: 'CREFITO 55555',
+    telefone: '(85) 99999-0007',
+    apresentacao: '',
+  },
+  {
+    id: 8,
+    nome: 'Dra. Juliana Ferreira',
+    especialidade_id: 4,
+    especialidade: 'Fisioterapeuta',
+    crm: 'CREFITO 66666',
+    telefone: '(85) 99999-0008',
+    apresentacao: '',
+  },
+  {
+    id: 9,
+    nome: 'Farm. Paulo Henrique',
+    especialidade_id: 5,
+    especialidade: 'Farmacêutico Clínico',
+    crm: 'CRF 77777',
+    telefone: '(85) 99999-0009',
+    apresentacao: '',
+  },
+  {
+    id: 10,
+    nome: 'Farm. Isabela Rocha',
+    especialidade_id: 5,
+    especialidade: 'Farmacêutica',
+    crm: 'CRF 88888',
+    telefone: '(85) 99999-0010',
+    apresentacao: '',
+  },
+]
+
+export const horariosDisponiveis = [
+  '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
+  '11:00', '11:30', '13:00', '13:30', '14:00', '14:30',
+  '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+]
+
+export const instituicao = {
+  nome: 'Clínica Integrada de Saúde Unifametro',
+  endereco: 'Rua Liberato Barroso, 1503, Centro - Fortaleza',
+  horario: 'Segunda a sexta-feira, de 07h às 20h',
+  telefone: '(85) 3206-6433',
+}
